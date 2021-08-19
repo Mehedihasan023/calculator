@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+<body class="">
+    <header>
+            <h1 class="text-4xl text-center text-yellow-700 mt-16 font-bold">Simple Calculator</h1>
+    </header>
+    <main>
+        <section class="container mt-4 flex justify-center  block mx-auto">
+            <div class="block mx-auto border-8  h-full bg-indigo-300 ">
+                <div class=""><h2 id="display-field" class=" border-8 w-auto m-2 text-right h-20 content-center text-6xl bg-gray-100"></h2></div>
+                <div class="grid grid-cols-4 grid-rows-5 grid-flow-col gap-1 p-4 flex justify-center items-center">
+                    <button id="btnNoC" class="border-4 text-center w-20 text-white text-5xl bg-red-400 uppercase"type="submit">c</button>
+                    <button id="btnNo1" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">1</button>
+                    <button id="btnNo4" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">4</button>
+                    <button id="btnNo7" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">7</button>
+                    <button id="btnNo0" class="border-4 text-center w-auto text-white text-5xl bg-red-400 col-span-2"type="submit">0</button>
+                    <button id="btNo/" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">/</button>
+                    <button id="btnNo2" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">2</button>
+                    <button id="btnNo5" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">5</button>
+                    <button id="btnNo8" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">8</button>
+                    <button id="btNoX" class="border-4 text-center w-20 text-white text-5xl bg-red-400 uppercase"type="submit">x</button>
+                    <button id="btnNo3" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">3</button>
+                    <button id="btnNo6" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">6</button>
+                    <button id="btnNo9" class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">9</button>
+                    <button id="btNo." class="border-4 text-center w-20 text-white text-5xl bg-red-400 "type="submit">.</button>
+                    <!-- <button class="border-4 text-center w-20 text-white text-5xl bg-red-400"type="submit">15</button> -->
+                    <button id="btNo-" class="border-4 text-center w-20 text-white text-5xl bg-red-400 uppercase"type="submit">-</button>
+                    <button id="btNo+" class="border-4 text-center w-20 text-white text-5xl bg-red-400 uppercase"type="submit">+</button>
+                    <button id="btNo=" class="border-4 text-center w-20 text-white text-5xl bg-red-400 h-full text-5xl bg-red-400 row-span-3"type="submit">=</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/calculation.js"></script>
+</body>
+</html>
