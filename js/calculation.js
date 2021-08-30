@@ -69,49 +69,106 @@ document.getElementById('btNo/').addEventListener
 });
 document.getElementById('btnNoC').addEventListener
 ('click',function(){
-   const clear = document.getElementById('display-field');
-   clear.innerText='';
+    const clear = document.getElementById('display-field');
+    clear.innerText='';
 });
+
 document.getElementById('btNo=').addEventListener
 ('click',function(){
     const math = document.getElementById('display-field');
-    const mathvalue= math.innerText;
-    if(mathvalue.indexOf('+') !=  -1){
+    const mathvalue= math.innerText;  
+    if (mathvalue.indexOf('+') !=  -1){
         const plus = mathvalue.split('+');
-        var a = plus[0];
-        var b = plus[1];
-        var num1 = parseFloat(a);
-        var num2 = parseFloat(b);
-        var total = num1 + num2;
-        math.innerText=total;
-    }
-    else if (mathvalue.indexOf('-') !=  -1){
-        const plus = mathvalue.split('-');
-        var a = plus[0];
-        var b = plus[1];
-        var num1 = parseFloat(a);
-        var num2 = parseFloat(b);
-        var total = num1 - num2;
+        let total=0;
+        for(const element of plus){
+            let elementValue = parseFloat(element);
+            total = elementValue + total;
+        }
         math.innerText=total;
     }
     else if (mathvalue.indexOf('X') !=  -1){
-        const plus = mathvalue.split('X');
-        var a = plus[0];
-        var b = plus[1];
-        var num1 = parseFloat(a);
-        var num2 = parseFloat(b);
-        var total = num1 * num2;
+        const multi = mathvalue.split('X');
+        let total= 1;
+        for(const element of multi){
+            let elementValue = parseFloat(element);
+            total = elementValue * total;
+        }
         math.innerText=total;
     }
-    
+
+    else if (mathvalue.indexOf('-') !=  -1){
+        const sub = mathvalue.split('-');
+        function substraction(a,b){
+            let c= a-b;
+            return c;
+        }
+        let total1= [0];
+        let temp = [0];
+        let res =[0];
+        for(const element1 of sub){
+            let elementValue1 = parseFloat(element1);
+            // total1 =  (elementValue)-(total1) ;
+            temp[0] = elementValue1;
+            temp[1] = res;
+            let a  = temp[0];
+            let b  = parseFloat(temp[1]);
+            res=  (a) - (b);
+            // if( temp[0]=temp[1]){
+            if(element1 < sub.length){
+            // total1 = substraction(b,a);
+            res = substraction(b,a);
+            math.innerText = res;
+            // total1 = substraction(b,a);
+            }
+            else{
+                total1 = substraction(b,a);
+                math.innerText = total1;
+            }
+                // math.innerText = total1;
+            // }
+            
+            // res =parseFloat(total1);
+            // res = substraction(total1,temp);
+            // total1= res;
+        }
+        // math.innerText = res;
+    }
+
     else if (mathvalue.indexOf('/') !=  -1){
-        const plus = mathvalue.split('/');
-        var a = plus[0];
-        var b = plus[1];
-        var num1 = parseFloat(a);
-        var num2 = parseFloat(b);
-        var total = num1 / num2;
-        math.innerText=total;
+        const division = mathvalue.split('/');
+        function a (b,c){
+            let total2 = b/c;
+            math.innerText=total2;
+        }
+        let total= 1;
+        for(const element of division){
+            let elementValue = parseFloat(element);
+            if(elementValue != total){
+            a(total,elementValue);
+            }
+            else if (elementValue == total){
+                total = elementValue / total;
+                math.innerText=total;
+            }  
+            total = elementValue / total;
+        }
     }
-    
+    // else if (mathvalue.indexOf('-') !=  -1){
+    //     const plus = mathvalue.split('-');
+    //     var a = plus[0];
+    //     var b = plus[1];
+    //     var num1 = parseFloat(a);
+    //     var num2 = parseFloat(b);
+    //     var total = num1 - num2;
+    //     math.innerText=total;
+    // }
+    // else if (mathvalue.indexOf('/') !=  -1){
+    //     const plus = mathvalue.split('/');
+    //     var a = plus[0];
+    //     var b = plus[1];
+    //     var num1 = parseFloat(a);
+    //     var num2 = parseFloat(b);
+    //     var total = num1 / num2;
+    //     math.innerText=total;
+    // }
 })
